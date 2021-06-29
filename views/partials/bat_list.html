@@ -1,0 +1,7 @@
+<div class="container">
+    <h1 class="is-size-2">Bats</h1>
+
+    ${data.map(bat => 
+        `<a href="/bats/${bat.slug}">${bat.bat_brand}: ${bat.bat_name}</a>`
+    ).join('')}
+</div>

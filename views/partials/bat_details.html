@@ -1,0 +1,54 @@
+
+<div class="container">
+    <h1 class="is-size-2">${title}</h1>
+
+    ${data.map(review => 
+        `<div>
+            <p>Bat Score: ${review.bat_score}</p>
+            <p>Review:
+                ${review.bat_review}
+            </p>
+        </div>`
+    )}
+</div>
+
+${!!is_logged_in ?
+  `<h1 class="is-size-4">Write a Review</h1>
+  <form>
+    <div class="field">
+        <label class="label">Brand</label>
+        <div class="control">
+          <input name="brand" class="input" type="text" placeholder="Brand of bat">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input name="name" class="input" type="text" placeholder="Name of bat">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Score</label>
+        <div class="control">
+            <div class="select">
+              <select name="score">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Review</label>
+        <div class="control">
+          <textarea name="review" class="textarea" placeholder="Write your review"></textarea>
+        </div>
+    </div>
+    <button class="button is-primary" type="submit">Submit</button>
+  </form>`
+  :
+  ``
+}
